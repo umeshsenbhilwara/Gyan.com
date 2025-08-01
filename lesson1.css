@@ -1,0 +1,31 @@
+
+.tabl{
+    border-collapse: collapse;
+    width: 55vmax;
+    height: 70vmin;
+    justify-content: center;
+align-items: center;
+}
+td, th {
+border: 1px solid #dddddd;
+text-align: left;
+padding: 8px;
+}
+h1{
+margin: 2vw 28vh;
+font-size: 4vmax;
+}
+.pi{
+margin: 2vw 28vh;
+font-size: 3vmax; 
+}
+.lesson1{
+margin-left: 21vw;
+margin-top: 5vh;
+}
+h2{
+margin-right: 18vw;
+font-size: 3.5vmax;
+}
+
+

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainBoost - Master English, Math & Reasoning</title>
+    <meta name="description" content="Interactive learning platform for English, Mathematics, and Logical Reasoning">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#10B981',
+                        accent: '#F59E0B',
+                        dark: '#1F2937',
+                        light: '#F9FAFB',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
+            }
+            .icon-3d {
+                @apply transition-all duration-500 hover:scale-110 hover:rotate-12;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                      <a href=""> <i class="fas fa-brain text-3xl text-primary mr-2"></i>
+                        <span class="text-xl font-bold text-gradient">BrainBoost</span>
+                        </a> 
+                    </div>
+                    <div class="hidden md:ml-10 md:flex md:space-x-8">
+                        <a href="#home" class="text-primary  hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium">Home</a>
+                        <a href="#courses" class="text-primary  hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium">Courses</a>
+                        <a href="#features" class="text-primary hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium">Features</a>
+                        <a href="#testimonials" class="text-primary hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium">Testimonials</a>
+                        <a href="#pricing" class="text-primary hover:border-gray-300 inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium">Pricing</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center">
+                    <a href="login.php" class="text-dark hover:text-primary px-3 py-2 text-sm font-medium">Login</a>
+                    <a href="signup.php" class="ml-4 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:shadow-lg">Sign Up Free</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden bg-gradient-to-br from-primary to-purple-600 text-white py-20">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10">
+            <div class="absolute top-20 left-20 w-64 h-64 rounded-full bg-white animate-pulse-slow"></div>
+            <div class="absolute bottom-10 right-20 w-80 h-80 rounded-full bg-white animate-pulse-slow animation-delay-2000"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                <div class="animate__animated animate__fadeInLeft">
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">
+                        Master <span class="text-accent">English</span>, <span class="text-secondary">Math</span> & <span class="text-yellow-300">Reasoning</span> with Ease
+                    </h1>
+                    <p class="text-xl mb-8 text-gray-100">
+                        Interactive learning platform designed to boost your skills through engaging content, practice exercises, and personalized feedback.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="login.php" class="bg-accent hover:bg-yellow-500 text-dark font-bold py-3 px-6 rounded-lg text-lg transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 flex items-center justify-center">
+                            <i class="fas fa-rocket mr-2"></i> Start Learning Free
+                        </a>
+                        <a href="video.php" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-3 px-6 rounded-lg text-lg transition-all duration-300 border border-white border-opacity-30 flex items-center justify-center">
+                            <i class="fas fa-play-circle mr-2"></i> Watch Demo
+                        </a>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
+                    <span class="block">Why Choose BrainBoost?</span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Our platform combines cutting-edge technology with proven teaching methodologies
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Feature 1 -->
+                <div class="bg-light rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 card-hover">
+                    <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-3xl text-primary icon-3d"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Personalized Learning</h3>
+                    <p class="text-gray-600">AI-powered adaptive learning paths that adjust to your skill level and learning pace.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-light rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 card-hover">
+                    <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-gamepad text-3xl text-secondary icon-3d"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Gamified Experience</h3>
+                    <p class="text-gray-600">Earn badges, unlock levels, and compete with friends to make learning fun and engaging.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-light rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 card-hover">
+                    <div class="w-16 h-16 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-clock text-3xl text-accent icon-3d"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Progress Tracking</h3>
+                    <p class="text-gray-600">Detailed analytics and reports to monitor your improvement across all subjects.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-light rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 card-hover">
+                    <div class="w-16 h-16 bg-purple-500 bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-video text-3xl text-purple-500 icon-3d"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Interactive Videos</h3>
+                    <p class="text-gray-600">Engaging video lessons with quizzes and exercises built into the experience.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-light rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 card-hover">
+                    <div class="w-16 h-16 bg-blue-500 bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-3xl text-blue-500 icon-3d"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">AI Tutor Assistance</h3>
+                    <p class="text-gray-600">24/7 access to our AI tutor for instant explanations and problem-solving help.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-light rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 card-hover">
+                    <div class="w-16 h-16 bg-pink-500 bg-opacity-10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-3xl text-pink-500 icon-3d"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Mobile Friendly</h3>
+                    <p class="text-gray-600">Learn anytime, anywhere with our fully responsive platform that works on all devices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
+                    <span class="block">Our Comprehensive Courses</span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Structured learning paths designed by subject matter experts
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- English Course -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl card-hover">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center">
+                        <i class="fas fa-language text-8xl text-white opacity-30 icon-3d"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-dark">English Mastery</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Popular</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">From grammar fundamentals to advanced writing techniques and vocabulary building.</p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Grammar & Composition</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Vocabulary Expansion</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Reading Comprehension</span>
+                            </li>
+                        </ul>
+                        <a href="English.php" class="text-primary font-semibold inline-flex items-center hover:text-primary-dark">
+                            Explore Course <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mathematics Course -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl card-hover">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-emerald-600 flex items-center justify-center">
+                        <i class="fas fa-square-root-alt text-8xl text-white opacity-30 icon-3d"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-dark">Mathematics Pro</h3>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">New</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">Master concepts from basic arithmetic to advanced calculus and statistics.</p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Algebra & Geometry</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Trigonometry</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Calculus & Statistics</span>
+                            </li>
+                        </ul>
+                        <a href="Mathematics.php" class="text-primary font-semibold inline-flex items-center hover:text-primary-dark">
+                            Explore Course <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Reasoning Course -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl card-hover">
+                    <div class="h-48 bg-gradient-to-r from-yellow-500 to-amber-600 flex items-center justify-center">
+                        <i class="fas fa-chess-queen text-8xl text-white opacity-30 icon-3d"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-dark">Logical Reasoning</h3>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">Best Seller</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">Develop critical thinking and problem-solving skills through structured exercises.</p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Verbal Reasoning</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Non-Verbal Reasoning</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Analytical Puzzles</span>
+                            </li>
+                        </ul>
+                        <a href="Reasoning.php" class="text-primary font-semibold inline-flex items-center hover:text-primary-dark">
+                            Explore Course <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary-dark transition-all duration-300 hover:shadow-lg">
+                    View All Courses <i class="fas fa-chevron-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
+                    <span class="block">How BrainBoost Works</span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Simple steps to start your learning journey
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline bar -->
+                <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gray-200 transform -translate-y-1/2"></div>
+                
+                <div class="space-y-10 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
+                    <!-- Step 1 -->
+                    <div class="relative group">
+                        <div class="lg:absolute lg:top-0 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-lg z-10 mx-auto mb-4 lg:mb-0">
+                            <span class="text-white text-2xl font-bold">1</span>
+                        </div>
+                        <div class="lg:pt-16 lg:px-4 lg:text-center">
+                            <h3 class="text-xl font-bold text-dark mb-3">Sign Up & Choose Your Path</h3>
+                            <p class="text-gray-600">Create your free account and select the subjects you want to focus on based on your goals.</p>
+                        </div>
+                        <div class="hidden lg:block absolute top-1/2 right-0 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-l-8 border-l-primary transform translate-x-full -translate-y-1/2"></div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="relative group">
+                        <div class="lg:absolute lg:top-0 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 w-20 h-20 bg-secondary rounded-full flex items-center justify-center shadow-lg z-10 mx-auto mb-4 lg:mb-0">
+                            <span class="text-white text-2xl font-bold">2</span>
+                        </div>
+                        <div class="lg:pt-16 lg:px-4 lg:text-center">
+                            <h3 class="text-xl font-bold text-dark mb-3">Take Assessment Test</h3>
+                            <p class="text-gray-600">Our smart assessment identifies your current skill level to personalize your learning journey.</p>
+                        </div>
+                        <div class="hidden lg:block absolute top-1/2 right-0 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-l-8 border-l-secondary transform translate-x-full -translate-y-1/2"></div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="relative group">
+                        <div class="lg:absolute lg:top-0 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 w-20 h-20 bg-accent rounded-full flex items-center justify-center shadow-lg z-10 mx-auto mb-4 lg:mb-0">
+                            <span class="text-dark text-2xl font-bold">3</span>
+                        </div>
+                        <div class="lg:pt-16 lg:px-4 lg:text-center">
+                            <h3 class="text-xl font-bold text-dark mb-3">Start Learning & Track Progress</h3>
+                            <p class="text-gray-600">Engage with interactive content, complete exercises, and watch your skills improve with real-time feedback.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
+                    <span class="block">What Our Students Say</span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Success stories from our growing community of learners
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-dark">Sarah Johnson</h4>
+                            <p class="text-gray-500">English Student</p>
+                            <div class="flex mt-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "BrainBoost transformed my writing skills in just 3 months! The interactive exercises and personalized feedback helped me identify my weak areas and improve systematically."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Raj Patel" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-dark">Raj Patel</h4>
+                            <p class="text-gray-500">Math Student</p>
+                            <div class="flex mt-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star-half-alt text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "The way complex math concepts are broken down into simple, visual explanations is amazing. I went from struggling with algebra to actually enjoying it!"
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 card-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Chen" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-dark">Emily Chen</h4>
+                            <p class="text-gray-500">Reasoning Student</p>
+                            <div class="flex mt-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "The logical reasoning course helped me immensely in my competitive exam preparation. The puzzle-solving techniques are practical and effective."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
+                    <span class="block">Simple, Transparent Pricing</span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Choose the plan that fits your learning goals
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Free Plan -->
+                <div class="bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 card-hover">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-dark mb-2">Free</h3>
+                        <p class="text-gray-600 mb-4">Perfect for trying out the platform</p>
+                        <div class="flex justify-center items-baseline my-4">
+                            <span class="text-4xl font-extrabold text-dark">$0</span>
+                            <span class="text-gray-500 ml-1">/month</span>
+                        </div>
+                        <a href="#" class="block w-full bg-gray-200 hover:bg-gray-300 text-dark font-bold py-3 px-4 rounded-lg transition-all duration-300">
+                            Get Started
+                        </a>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Limited access to courses</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Basic practice exercises</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Community support</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-times text-red-400 mr-2"></i>
+                            <span class="text-gray-400">Personalized learning path</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-times text-red-400 mr-2"></i>
+                            <span class="text-gray-400">Advanced analytics</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Premium Plan -->
+                <div class="bg-white border-2 border-primary rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 relative">
+                    <div class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                        Most Popular
+                    </div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-dark mb-2">Premium</h3>
+                        <p class="text-gray-600 mb-4">For serious learners</p>
+                        <div class="flex justify-center items-baseline my-4">
+                            <span class="text-4xl font-extrabold text-dark">$19</span>
+                            <span class="text-gray-500 ml-1">/month</span>
+                        </div>
+                        <a href="#" class="block w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-4 rounded-lg transition-all duration-300">
+                            Get Started
+                        </a>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Full access to all courses</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Advanced practice exercises</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Personalized learning path</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Progress analytics</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Priority email support</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Family Plan -->
+                <div class="bg-gray-50 rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 card-hover">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-dark mb-2">Family</h3>
+                        <p class="text-gray-600 mb-4">For households with multiple learners</p>
+                        <div class="flex justify-center items-baseline my-4">
+                            <span class="text-4xl font-extrabold text-dark">$39</span>
+                            <span class="text-gray-500 ml-1">/month</span>
+                        </div>
+                        <a href="#" class="block w-full bg-gray-200 hover:bg-gray-300 text-dark font-bold py-3 px-4 rounded-lg transition-all duration-300">
+                            Get Started
+                        </a>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Everything in Premium</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Up to 5 user accounts</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Individual progress tracking</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span class="text-gray-700">Family leaderboard</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span class="text-gray-700">24/7 priority support</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600">Need help choosing? <a href="#" class="text-primary font-medium hover:text-primary-dark">Contact our team</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-purple-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-extrabold mb-6">
+                Ready to boost your skills?
+            </h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto text-gray-100">
+                Join thousands of learners who have transformed their English, Math, and Reasoning skills with BrainBoost.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-white hover:bg-gray-100 text-primary font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 hover:shadow-lg">
+                    Start 7-Day Free Trial
+                </a>
+                <a href="#" class="bg-transparent hover:bg-white hover:bg-opacity-10 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 border border-white border-opacity-30">
+                    Schedule a Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-brain text-3xl text-primary mr-2"></i>
+                        <span class="text-xl font-bold text-white">BrainBoost</span>
+                    </div>
+                    <p class="mb-4">
+                        Interactive learning platform designed to make mastering English, Mathematics, and Logical Reasoning engaging and effective.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold text-lg mb-4">Courses</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">English Mastery</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Mathematics Pro</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Logical Reasoning</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">All Courses</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">New Releases</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold text-lg mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Press</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold text-lg mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Refund Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">
+                    © 2023 BrainBoost. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary-dark">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add animation to elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.card-hover, .icon-3d');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
