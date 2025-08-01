@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div id="active-tab" class="absolute bottom-0 left-50 h-1 bg-primary w-1/2 transition-all duration-300"></div>
         </div>
         <div class="mt-6 sm:mt-8">
-            <form id="signup-form" action="signup.php" method="POST" class="space-y-4 sm:space-y-6">
+            <form id="signup-form" action="C:\xampp\htdocs\Gyan.com\signup.php" method="POST" class="space-y-4 sm:space-y-6">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center">Create Account</h2>
                 <?php if ($error): ?>
                     <div class="text-red-400 text-center text-sm"><?php echo htmlspecialchars($error); ?></div>
@@ -141,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </button>
                 </div>
             </form>
-            <form id="login-form" action="login.php" method="POST" class="space-y-4 sm:space-y-6 hidden">
+            <form id="login-form" action="C:\xampp\htdocs\Gyan.com\login.php" method="POST" class="space-y-4 sm:space-y-6 hidden">
                 <input type="hidden" name="login" value="1">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center">Welcome Back</h2>
                 <?php if ($error): ?>
