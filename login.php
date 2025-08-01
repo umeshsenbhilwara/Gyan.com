@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
             <div id="active-tab" class="absolute bottom-0 left-0 h-1 bg-primary w-1/2 transition-all duration-300"></div>
         </div>
         <div class="mt-6 sm:mt-8">
-            <form id="login-form" action="login.php" method="POST" class="space-y-4 sm:space-y-6">
+            <form id="login-form" action="C:\xampp\htdocs\Gyan.com\login.php" method="POST" class="space-y-4 sm:space-y-6">
                 <input type="hidden" name="login" value="1">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center">Welcome Back</h2>
                 <?php if ($error): ?>
@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
                     </button>
                 </div>
             </form>
-            <form id="signup-form" action="signup.php" method="POST" class="space-y-4 sm:space-y-6 hidden">
+            <form id="signup-form" action="C:\xampp\htdocs\Gyan.com\signup.php" method="POST" class="space-y-4 sm:space-y-6 hidden">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center">Create Account</h2>
                 <div class="relative group">
                     <input id="signup-name" name="name" type="text" required class="w-full px-4 py-2 sm:py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-primary peer" placeholder=" ">
